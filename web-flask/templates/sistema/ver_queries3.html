@@ -1,0 +1,32 @@
+{% extends "sistema.html" %}
+{% block ver_queries %}
+<div>
+  <form action="/ver_queries" method="post">
+    <div class="form-group row">
+      <div class="col-sm-2">
+      </div>
+    </div>
+  </form>
+  <hr>
+
+  <table class="table table-striped table-hover table-bordered table-sm bg-white">
+    <thead>
+      <tr>
+        <td>ID Parroquia</td>
+        <td>Nombre Parroquia</td>
+        <td>numero Carreras</td>
+        <td>Estado Parroquia</td>
+      </tr>
+    </thead>
+    {% for row in resultado %}  
+    <tr>
+    <td>{{row[0]}}</td>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+    <td style="word-break:break-all; width: 200px;"><p style="word-wrap: break-word;  word-wrap: break-word; width: 200px;">{{row[3]}}</p></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
